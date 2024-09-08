@@ -9,13 +9,13 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+        title: const Text("Settings"),
       ),
       body: Column(
         children: [
           ListTile(leading: const CircleAvatar(child: Icon(Icons.bluetooth),),
-          title: Text("Bluetooth Permission"),
-          subtitle: Text("Allow Bluetooth to connect to the device"),
+          title: const Text("Bluetooth Permission"),
+          subtitle: const Text("Allow Bluetooth to connect to the device"),
           onTap: () => requestPermission(permission: Permission.bluetooth),
           ),
         ],

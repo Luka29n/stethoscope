@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => BluetoothPairPage()),
+                          MaterialPageRoute(builder: (context) => const BPM()),
                         );
                       },
                       child: Container(
@@ -87,7 +87,7 @@ class HomePage extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => BluetoothPairPage()),
+                          MaterialPageRoute(builder: (context) => const ECG()),
                         );
                       },
                       child: Container(

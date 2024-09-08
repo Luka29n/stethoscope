@@ -40,7 +40,7 @@ class _BluetoothPairPageState extends State<BluetoothPairPage> {
       await _scanSubscription?.cancel();
       
       // Start the scan
-      await FlutterBluePlus.startScan(timeout: Duration(seconds: 4));
+      await FlutterBluePlus.startScan(timeout: const Duration(seconds: 1));
       
       // Listen for scan results
       _scanSubscription = FlutterBluePlus.scanResults.listen((results) {
@@ -89,27 +89,33 @@ class _BluetoothPairPageState extends State<BluetoothPairPage> {
     return statuses.values.every((status) => status.isGranted);
   }
 
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bluetooth Pairing"),
+        title: const Text("Bluetooth Pairing"),
       ),
       body: Column(
-        children: [
+        children: [const 
           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
+            padding:  EdgeInsets.all(16.0),
+            child:  Text(
               "named devices",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Container(
             child: _isScanning
-                ? Center(child: CircularProgressIndicator())
+                ? const Center(child: CircularProgressIndicator())
                 : ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: _scanResults.where((result) => result.device.name.isNotEmpty).length,
                     itemBuilder: (context, index) {
                       final namedDevices = _scanResults.where((result) => result.device.name.isNotEmpty).toList();
@@ -125,26 +131,26 @@ class _BluetoothPairPageState extends State<BluetoothPairPage> {
                     },
                   ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
+          const Padding(
+            padding:  EdgeInsets.all(16.0),
+            child:  Text(
               "other devices",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: _isScanning
-                ? Center(child: CircularProgressIndicator())
+                ? const Center(child: CircularProgressIndicator())
                 : ListView.builder(
                     itemCount: _scanResults.where((result) => result.device.name.isEmpty).length,
                     itemBuilder: (context, index) {
                       final noNameDevices = _scanResults.where((result) => result.device.name.isEmpty).toList();
                       final device = noNameDevices[index].device;
                       return ListTile(
-                        title: Text("Unnamed Device"),
+                        title: const Text("Unnamed Device"),
                         subtitle: Text(device.id.id),
                         trailing: ElevatedButton(
-                          child: Text("Connect"),
+                          child: const Text("Connect"),
                           onPressed: () => _connectToDevice(device),
                         ),
                       );
