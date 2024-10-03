@@ -1,16 +1,6 @@
-# stethoscope
+Electronic Stethoscope Application
+Project Overview
+This project aims to develop an Electronic Stethoscope Application that allows healthcare professionals to visualize and analyze heart. The application is being designed to work with an electronic stethoscope device.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Current Progress: 60% complete
+The core functionality is partially implemented, and several key features are still in development. We are actively working on improving the user interface and integrating advanced signal processing algorithms.
